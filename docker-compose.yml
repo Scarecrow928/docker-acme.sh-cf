@@ -1,0 +1,14 @@
+version: "3"
+services:
+    acme.sh:
+        image: neilpang/acme.sh:latest
+        container_name: acme.sh
+        volumes:
+            - .:/acme.sh
+        environment:
+            - CF_Token=TokenTokenTokenTokenTokenTokenTokenToken
+            - CF_Account_ID=ACCOUNTIDACCOUNTIDACCOUNTIDACCOU
+            - CF_Zone_ID=ZONEIDZONEIDZONEIDZONEIDZONEIDZO
+        command: ["daemon"]
+        network_mode: host
+        restart: always
