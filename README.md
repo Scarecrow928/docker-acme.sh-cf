@@ -1,5 +1,5 @@
 # docker-acme.sh-cf
-Script for issuing and installing certificates by (acme.sh)[https://github.com/acmesh-official/acme.sh], using the Cloudflare's DNS API.
+Script for issuing and installing certificates by [acme.sh](https://github.com/acmesh-official/acme.sh), using the Cloudflare's DNS API.
 
 1. Install docker, docker-compose, cron
 2. Edit Cloudflare API Token, Account ID, Zone ID in `docker-compose.yml`
