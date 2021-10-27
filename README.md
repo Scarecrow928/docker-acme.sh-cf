@@ -17,5 +17,5 @@ server {
 5. Run `./run.sh`
 6. `crontab -e`, add:
 ```
-0 0 1 * * docker exec nginx nginx -s reload >/dev/null 2>&1
+0 0 * * 1 /path/to/cronjob.sh
 ```
