@@ -11,4 +11,4 @@ services:
             - CF_Zone_ID=ZONEIDZONEIDZONEIDZONEIDZONEIDZO
         command: ["daemon"]
         network_mode: host
-        restart: always
+        restart: unless-stopped
