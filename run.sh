@@ -20,7 +20,7 @@ if [ $exit_code -ne 0 ]; then
     error_exit $exit_code
 fi
 
-docker exec acme.sh --issue --dns dns_cf -d $DOMAIN -d *.$DOMAIN
+docker exec acme.sh --issue --dns dns_cf -d $DOMAIN -d *.$DOMAIN "$@"
 exit_code=$?
 if [ $exit_code -ne 0 ]; then
     error_exit $exit_code
