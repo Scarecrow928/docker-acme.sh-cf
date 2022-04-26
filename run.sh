@@ -14,6 +14,7 @@ if [ $exit_code -ne 0 ]; then
 fi
 
 docker exec acme.sh --set-default-ca --server letsencrypt
+exit_code=$?
 if [ $exit_code -ne 0 ]; then
     error_exit $exit_code
 fi
