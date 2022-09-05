@@ -1,6 +1,12 @@
 #!/bin/bash
 
-DOMAIN='domain.com'
+CONFIG_FILE='config.env'
+if [ -f "${CONFIG_FILE}" ]; then
+    export $(grep -v '^#' ./${CONFIG_FILE} | xargs -0)
+else 
+    echo 'config file not found.'
+    exit 1
+fi
 
 function error_exit {
     docker compose down

@@ -6,9 +6,9 @@ services:
         volumes:
             - .:/acme.sh
         environment:
-            - CF_Token=TokenTokenTokenTokenTokenTokenTokenToken
-            - CF_Account_ID=ACCOUNTIDACCOUNTIDACCOUNTIDACCOU
-            - CF_Zone_ID=ZONEIDZONEIDZONEIDZONEIDZONEIDZO
-        command: ["daemon"]
+            - CF_Token=${CF_Token}
+            - CF_Account_ID=${CF_Account_ID}
+            - CF_Zone_ID=${CF_Zone_ID}
+        command: [ "daemon" ]
         network_mode: host
         restart: unless-stopped
