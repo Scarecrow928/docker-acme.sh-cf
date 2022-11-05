@@ -4,7 +4,7 @@ services:
         image: neilpang/acme.sh:latest
         container_name: acme.sh
         volumes:
-            - ./depoly:/acme.sh/deploy
+            - ./deploy:/acme.sh/deploy
         environment:
             - CF_Token=${CF_Token}
             - CF_Account_ID=${CF_Account_ID}
