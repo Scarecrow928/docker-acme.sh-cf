@@ -1,4 +1,6 @@
-account.conf
-ca/
-http.header
-config.env
+deploy/
+
+.vscode/
+.idea/
+
+**/tmp

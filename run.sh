@@ -2,7 +2,7 @@
 
 CONFIG_FILE='config.env'
 if [ -f "${CONFIG_FILE}" ]; then
-    export $(grep -v '^#' ./${CONFIG_FILE} | xargs -0)
+    source "${CONFIG_FILE}"
 else 
     echo 'config file not found.'
     exit 1
