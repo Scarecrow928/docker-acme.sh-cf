@@ -4,3 +4,5 @@ deploy/
 .idea/
 
 **/tmp
+
+config.env
