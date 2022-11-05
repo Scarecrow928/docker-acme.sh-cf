@@ -8,6 +8,8 @@ else
     exit 1
 fi
 
+mkdir -p 'deploy'
+
 function error_exit {
     docker compose down
     exit $1
