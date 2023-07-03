@@ -2,7 +2,9 @@ deploy/
 
 .vscode/
 .idea/
+*.swp
 
 **/tmp
 
 config.env
+docker-compose.override.yml
