@@ -1,14 +1,12 @@
 version: "3"
 services:
-    acme.sh:
-        image: neilpang/acme.sh:latest
-        container_name: acme.sh
-        volumes:
-            - ./deploy:/acme.sh/deploy
-        environment:
-            - CF_Token=${CF_Token}
-            - CF_Account_ID=${CF_Account_ID}
-            - CF_Zone_ID=${CF_Zone_ID}
-        command: [ "daemon" ]
-        network_mode: host
-        restart: unless-stopped
+  acme.sh:
+    image: neilpang/acme.sh
+    container_name: acme.sh
+    volumes:
+      - ./deploy:/acme.sh/deploy
+      - ./issue-cert.sh:/issue-cert.sh:ro
+    env_file: ./config.env
+    command: [ "daemon" ]
+    network_mode: host
+    restart: unless-stopped
