@@ -1,7 +1,6 @@
 #!/bin/sh
 
 function error_exit {
-    docker compose down
     exit $1
 }
 
