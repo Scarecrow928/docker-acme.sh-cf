@@ -1,8 +1,8 @@
 # docker-acme.sh-cf
-A script for issuing and installing certificates by [acme.sh](https://github.com/acmesh-official/acme.sh), using the Cloudflare's DNS API. These steps will run acme.sh container as a daemon, and automatically refresh a wildcard domain certificate located at `deploy` folder. Finally adding some configs in crontab to monthly refresh other applications.
+A script for issuing and installing certificates by [acme.sh](https://github.com/acmesh-official/acme.sh) and Cloudflare DNS API.
 
-1. Requires docker, docker-compose, cron
-2. copy `config.env.template` to `config.env` and edit the configs in it.
+1. Install docker, docker-compose
+2. Copy `config.env.template` to `config.env` and edit the environment variables.
 3. Edit nginx config:
 ```
 server {
@@ -11,10 +11,10 @@ server {
     ssl_certificate_key /path/to/deploy/key.pem; // private key
     ...
 }
-
 ```
-4. Run `./run.sh`
-5. `crontab -e`, add:
+4. Run `docker compose up -d`
+5. Run `docker exec -it acme.sh /issue-cert.sh`. The key files will be generated to `./depoly` folder
+6. `crontab -e`, add:
 ```
 0 0 * * 1 /path/to/cronjob.sh
 ```
